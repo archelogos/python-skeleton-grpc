@@ -1,0 +1,12 @@
+develop:
+  extends:
+    file: base.yml
+    service: base
+  container_name: python-grpc
+  environment:
+    DEBUG: "True"
+  command: develop
+  volumes:
+    - ./microservice:/opt/app/microservice
+    - ./protos:/opt/app/protos
+  restart: always
